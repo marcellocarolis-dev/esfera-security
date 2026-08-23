@@ -73,7 +73,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:20px 4
 
 /* HERO */
 .hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;padding:120px 0 80px;overflow:hidden;}
-.hero-bg{position:absolute;inset:0;z-index:0;}
+.hero-bg{position:absolute;inset:0;z-index:0;background:radial-gradient(1200px 600px at 70% 20%,rgba(6,182,212,.18),transparent 60%),linear-gradient(135deg,#070B2B 0%,#0B1642 55%,#071A32 100%);}
 .hero-bg img{width:100%;height:100%;object-fit:cover;}
 .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,11,43,.25) 0%,rgba(7,11,43,.55) 45%,rgba(7,11,43,.97) 100%);}
 .hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 40px;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;}
@@ -375,6 +375,41 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);padding:40px
 .totop-btn.show{opacity:1;pointer-events:all;}
 .totop-btn:hover{background:var(--bg-card-hover);border-color:var(--blue);}
 .totop-btn svg{width:16px;height:16px;color:var(--text);}
+
+/* RISK SURVEY & AUDIT */
+.risk-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:36px;}
+.risk-step{padding:26px;border-radius:var(--radius);border:1px solid var(--line);transition:var(--transition);}
+.risk-step:hover{border-color:var(--line-light);transform:translateY(-2px);}
+.rs-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
+.rs-num{font-family:'Poppins';font-weight:700;font-size:13px;color:var(--text-muted);letter-spacing:.08em;}
+.rs-tag{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;}
+.risk-step h3{font-size:17px;margin-bottom:8px;}
+.risk-step p{font-size:12.5px;color:var(--text-secondary);line-height:1.7;}
+.risk-chart-row{display:grid;grid-template-columns:1.55fr 1fr;gap:18px;margin-bottom:36px;}
+.risk-chart,.risk-readout{padding:26px;border-radius:var(--radius);border:1px solid var(--line);}
+.rc-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:14px;}
+.rc-title{font-family:'Poppins';font-weight:600;font-size:15px;}
+.rc-sub{font-size:11px;color:var(--text-muted);margin-top:3px;}
+.rc-current{text-align:right;}
+.rc-current span{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:var(--text-muted);}
+.rc-current strong{font-family:'Poppins';font-size:26px;color:var(--green);line-height:1.1;}
+.rc-svg{width:100%;height:200px;display:block;}
+.rc-legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:12px;padding-top:12px;border-top:1px solid var(--line);}
+.rc-legend span{display:flex;align-items:center;gap:6px;font-size:10.5px;color:var(--text-muted);}
+.rc-legend i{width:9px;height:9px;border-radius:50%;display:inline-block;}
+.risk-readout{display:flex;flex-direction:column;justify-content:center;}
+.rr-item{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);}
+.rr-label{font-size:11.5px;color:var(--text-muted);}
+.rr-val{font-family:'Poppins';font-weight:600;font-size:14px;}
+.rr-note{font-size:11px;color:var(--text-muted);line-height:1.65;margin-top:14px;}
+.risk-benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.rb-item{padding:20px;border-radius:var(--radius-sm);background:var(--bg-card);border:1px solid var(--line);}
+.rb-item h4{font-size:13.5px;margin-bottom:6px;}
+.rb-item p{font-size:11.5px;color:var(--text-secondary);line-height:1.65;}
+.risk-cta{text-align:center;margin-top:32px;}
+@media(max-width:900px){.risk-steps{grid-template-columns:1fr;}.risk-chart-row{grid-template-columns:1fr;}.risk-benefits{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.risk-benefits{grid-template-columns:1fr;}}
+
 .section-sep{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);max-width:200px;margin:0 auto;}
 </style>
 <!-- Secondary imagery refreshed for stronger security/AI/enterprise relevance. Hero imagery intentionally preserved. -->
@@ -398,7 +433,7 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);padding:40px
     </a>
     <div class="nav-links">
       <a href="#about">About</a><a href="#solutions">Solutions</a><a href="#ecosystem">Ecosystem</a>
-      <a href="#urbanvision">UrbanVision AI</a>
+      <a href="#urbanvision">UrbanVision AI</a><a href="#risk">Risk Survey</a>
       <a href="#projects">Projects</a><a href="#partners">Partners</a><a href="#contact" class="nav-cta">Request Consultation</a>
     </div>
     <div class="burger" id="burger"><span></span><span></span><span></span></div>
@@ -407,7 +442,7 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);padding:40px
 
 <div class="mobile-menu" id="mobileMenu">
   <a href="#about">About</a><a href="#solutions">Solutions</a><a href="#ecosystem">Ecosystem</a>
-  <a href="#urbanvision">UrbanVision AI</a>
+  <a href="#urbanvision">UrbanVision AI</a><a href="#risk">Risk Survey</a>
   <a href="#projects">Projects</a><a href="#partners">Partners</a><a href="#contact" class="mobile-cta">Request Consultation</a>
 </div>
 
@@ -688,12 +723,112 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);padding:40px
       <div class="partner-hero glass"><div class="partner-logo">DAHUA</div><div class="partner-type">Intelligent Video &amp; Security Technology</div><div class="partner-desc">Advanced video surveillance, AI analytics and integrated security solutions for professional environments.</div><div class="partner-badge">Technology Partner</div></div>
       <div class="partner-hero glass"><div class="partner-logo">UBIQUITI</div><div class="partner-type">Enterprise Networking &amp; Connectivity</div><div class="partner-desc">High-performance networking, wireless infrastructure and connectivity solutions for modern security ecosystems.</div><div class="partner-badge">Technology Partner</div></div>
     </div>
-    <div class="partner-others reveal">
-      <div class="partner-sm glass"><div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></div><span>AI Analytics Platforms</span></div>
-      <div class="partner-sm glass"><div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/></svg></div><span>Networking &amp; Infrastructure</span></div>
+      </div>
+</section>
+
+<!-- ===== URBANVISION AI — RISK MANAGEMENT (compact) ===== -->
+<section id="risk">
+  <div class="wrap">
+    <div class="section-header center reveal">
+      <div class="subhead" style="justify-content:center;">Risk Survey &amp; Audit</div>
+      <h2>Security Measured, Not Assumed</h2>
+      <p>UrbanVision AI turns a site survey into a scored, auditable risk baseline — then keeps it current with what the cameras actually see.</p>
+    </div>
+
+    <div class="img-text reveal" style="margin-bottom:36px;">
+      <div class="img-side"><img loading="lazy" decoding="async" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201200%20800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%23070B2B%22%2F%3E%3Cstop%20offset%3D%220.55%22%20stop-color%3D%22%230B1642%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23071A32%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22metal%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%23DDE8F4%22%2F%3E%3Cstop%20offset%3D%22.22%22%20stop-color%3D%22%2364748B%22%2F%3E%3Cstop%20offset%3D%22.5%22%20stop-color%3D%22%231E293B%22%2F%3E%3Cstop%20offset%3D%22.78%22%20stop-color%3D%22%2394A3B8%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230F172A%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22blue%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%2360A5FA%22%2F%3E%3Cstop%20offset%3D%22.5%22%20stop-color%3D%22%2306B6D4%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%231D4ED8%22%2F%3E%3C%2FlinearGradient%3E%3CradialGradient%20id%3D%22glow%22%3E%3Cstop%20stop-color%3D%22%2322D3EE%22%20stop-opacity%3D%22.45%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%2322D3EE%22%20stop-opacity%3D%220%22%2F%3E%3C%2FradialGradient%3E%3Cfilter%20id%3D%22shadow%22%3E%3CfeGaussianBlur%20stdDeviation%3D%2210%22%2F%3E%3C%2Ffilter%3E%3C%2Fdefs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23bg%29%22%2F%3E%3Cellipse%20cx%3D%22880%22%20cy%3D%22230%22%20rx%3D%22360%22%20ry%3D%22300%22%20fill%3D%22url%28%23glow%29%22%20opacity%3D%22.32%22%2F%3E%3Cellipse%20cx%3D%22600%22%20cy%3D%22690%22%20rx%3D%22330%22%20ry%3D%2240%22%20fill%3D%22%23020617%22%20opacity%3D%22.65%22%20filter%3D%22url%28%23shadow%29%22%2F%3E%3Cg%3E%3Crect%20x%3D%22120%22%20y%3D%22130%22%20width%3D%22440%22%20height%3D%22560%22%20rx%3D%2228%22%20fill%3D%22url%28%23metal%29%22%20opacity%3D%22.9%22%2F%3E%3Crect%20x%3D%22145%22%20y%3D%22158%22%20width%3D%22390%22%20height%3D%22504%22%20rx%3D%2218%22%20fill%3D%22%230B1228%22%20stroke%3D%22%2360A5FA%22%20stroke-opacity%3D%22.28%22%2F%3E%3Crect%20x%3D%22255%22%20y%3D%22108%22%20width%3D%22170%22%20height%3D%2252%22%20rx%3D%2216%22%20fill%3D%22%23334155%22%20stroke%3D%22%2394A3B8%22%20stroke-opacity%3D%22.35%22%2F%3E%3Crect%20x%3D%22185%22%20y%3D%22205%22%20width%3D%22200%22%20height%3D%2218%22%20rx%3D%229%22%20fill%3D%22url%28%23blue%29%22%2F%3E%3Crect%20x%3D%22185%22%20y%3D%22240%22%20width%3D%22310%22%20height%3D%2212%22%20rx%3D%226%22%20fill%3D%22%231E293B%22%2F%3E%3Cg%20fill%3D%22%23111C3D%22%20stroke%3D%22%23334155%22%3E%3Crect%20x%3D%22185%22%20y%3D%22290%22%20width%3D%22310%22%20height%3D%2256%22%20rx%3D%2212%22%2F%3E%3Crect%20x%3D%22185%22%20y%3D%22360%22%20width%3D%22310%22%20height%3D%2256%22%20rx%3D%2212%22%2F%3E%3Crect%20x%3D%22185%22%20y%3D%22430%22%20width%3D%22310%22%20height%3D%2256%22%20rx%3D%2212%22%2F%3E%3Crect%20x%3D%22185%22%20y%3D%22500%22%20width%3D%22310%22%20height%3D%2256%22%20rx%3D%2212%22%2F%3E%3C%2Fg%3E%3Cg%3E%3Crect%20x%3D%22205%22%20y%3D%22308%22%20width%3D%2220%22%20height%3D%2220%22%20rx%3D%225%22%20fill%3D%22%2334D399%22%2F%3E%3Crect%20x%3D%22205%22%20y%3D%22378%22%20width%3D%2220%22%20height%3D%2220%22%20rx%3D%225%22%20fill%3D%22%2334D399%22%2F%3E%3Crect%20x%3D%22205%22%20y%3D%22448%22%20width%3D%2220%22%20height%3D%2220%22%20rx%3D%225%22%20fill%3D%22%23FBBF24%22%2F%3E%3Crect%20x%3D%22205%22%20y%3D%22518%22%20width%3D%2220%22%20height%3D%2220%22%20rx%3D%225%22%20fill%3D%22%23F87171%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23334155%22%3E%3Crect%20x%3D%22243%22%20y%3D%22314%22%20width%3D%22150%22%20height%3D%229%22%20rx%3D%224.5%22%2F%3E%3Crect%20x%3D%22243%22%20y%3D%22384%22%20width%3D%22196%22%20height%3D%229%22%20rx%3D%224.5%22%2F%3E%3Crect%20x%3D%22243%22%20y%3D%22454%22%20width%3D%22128%22%20height%3D%229%22%20rx%3D%224.5%22%2F%3E%3Crect%20x%3D%22243%22%20y%3D%22524%22%20width%3D%22172%22%20height%3D%229%22%20rx%3D%224.5%22%2F%3E%3C%2Fg%3E%3Crect%20x%3D%22185%22%20y%3D%22596%22%20width%3D%22310%22%20height%3D%2246%22%20rx%3D%2212%22%20fill%3D%22%230F1B3A%22%20stroke%3D%22%2322D3EE%22%20stroke-opacity%3D%22.4%22%2F%3E%3Crect%20x%3D%22205%22%20y%3D%22612%22%20width%3D%22118%22%20height%3D%2214%22%20rx%3D%227%22%20fill%3D%22url%28%23blue%29%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate%28620%20190%29%22%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%22440%22%20height%3D%22440%22%20rx%3D%2224%22%20fill%3D%22%230B1228%22%20stroke%3D%22%2360A5FA%22%20stroke-opacity%3D%22.3%22%20stroke-width%3D%222%22%2F%3E%3Cg%20fill%3D%22%2334D399%22%20opacity%3D%22.55%22%3E%3Crect%20x%3D%2252%22%20y%3D%22300%22%20width%3D%2276%22%20height%3D%2276%22%20rx%3D%228%22%2F%3E%3Crect%20x%3D%22136%22%20y%3D%22300%22%20width%3D%2276%22%20height%3D%2276%22%20rx%3D%228%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23FBBF24%22%20opacity%3D%22.55%22%3E%3Crect%20x%3D%22220%22%20y%3D%22300%22%20width%3D%2276%22%20height%3D%2276%22%20rx%3D%228%22%2F%3E%3Crect%20x%3D%2252%22%20y%3D%22216%22%20width%3D%2276%22%20height%3D%2276%22%20rx%3D%228%22%2F%3E%3Crect%20x%3D%22136%22%20y%3D%22216%22%20width%3D%2276%22%20height%3D%2276%22%20rx%3D%228%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23FBBF24%22%20opacity%3D%22.75%22%3E%3Crect%20x%3D%22304%22%20y%3D%22300%22%20width%3D%2276%22%20height%3D%2276%22%20rx%3D%228%22%2F%3E%3Crect%20x%3D%22220%22%20y%3D%22216%22%20width%3D%2276%22%20height%3D%2276%22%20rx%3D%228%22%2F%3E%3Crect%20x%3D%2252%22%20y%3D%22132%22%20width%3D%2276%22%20height%3D%2276%22%20rx%3D%228%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23F87171%22%20opacity%3D%22.6%22%3E%3Crect%20x%3D%22304%22%20y%3D%22216%22%20width%3D%2276%22%20height%3D%2276%22%20rx%3D%228%22%2F%3E%3Crect%20x%3D%22136%22%20y%3D%22132%22%20width%3D%2276%22%20height%3D%2276%22%20rx%3D%228%22%2F%3E%3Crect%20x%3D%22220%22%20y%3D%22132%22%20width%3D%2276%22%20height%3D%2276%22%20rx%3D%228%22%2F%3E%3Crect%20x%3D%2252%22%20y%3D%2248%22%20width%3D%2276%22%20height%3D%2276%22%20rx%3D%228%22%2F%3E%3Crect%20x%3D%22136%22%20y%3D%2248%22%20width%3D%2276%22%20height%3D%2276%22%20rx%3D%228%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23F87171%22%20opacity%3D%22.9%22%3E%3Crect%20x%3D%22304%22%20y%3D%22132%22%20width%3D%2276%22%20height%3D%2276%22%20rx%3D%228%22%2F%3E%3Crect%20x%3D%22220%22%20y%3D%2248%22%20width%3D%2276%22%20height%3D%2276%22%20rx%3D%228%22%2F%3E%3Crect%20x%3D%22304%22%20y%3D%2248%22%20width%3D%2276%22%20height%3D%2276%22%20rx%3D%228%22%2F%3E%3C%2Fg%3E%3Crect%20x%3D%22296%22%20y%3D%22208%22%20width%3D%2292%22%20height%3D%2292%22%20rx%3D%2210%22%20fill%3D%22none%22%20stroke%3D%22%23E0F2FE%22%20stroke-width%3D%224%22%2F%3E%3Ccircle%20cx%3D%22342%22%20cy%3D%22254%22%20r%3D%2212%22%20fill%3D%22%23E0F2FE%22%2F%3E%3Cpath%20d%3D%22M40%20396%20H392%22%20stroke%3D%22%2364748B%22%20stroke-opacity%3D%22.5%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20d%3D%22M40%20396%20V36%22%20stroke%3D%22%2364748B%22%20stroke-opacity%3D%22.5%22%20stroke-width%3D%223%22%2F%3E%3C%2Fg%3E%3Cg%20stroke%3D%22%2322D3EE%22%20stroke-opacity%3D%22.3%22%20stroke-width%3D%222%22%20fill%3D%22none%22%20stroke-dasharray%3D%228%2010%22%3E%3Cpath%20d%3D%22M560%20380%20H620%22%2F%3E%3Cpath%20d%3D%22M560%20300%20C588%20300%20592%20250%20620%20250%22%2F%3E%3Cpath%20d%3D%22M560%20460%20C588%20460%20592%20510%20620%20510%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%2367E8F9%22%3E%3Ccircle%20cx%3D%22600%22%20cy%3D%22380%22%20r%3D%225%22%2F%3E%3Ccircle%20cx%3D%221085%22%20cy%3D%22300%22%20r%3D%224%22%2F%3E%3Ccircle%20cx%3D%221120%22%20cy%3D%22420%22%20r%3D%223%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Conceptual risk survey and probability-consequence matrix render"><div class="img-badge">Survey → Risk Matrix</div></div>
+      <div class="text-side">
+        <div class="subhead">Engineering, Not Guesswork</div>
+        <h3>Every Finding Lands on a Matrix</h3>
+        <p>The survey checklist on the left feeds directly into the Probability × Consequence matrix on the right. Nothing is rated by intuition — each factor gets a coordinate, and that coordinate produces the score.</p>
+        <ul class="checklist">
+          <li>Findings captured as discrete, traceable risk factors</li>
+          <li>Scored against ISO 31000 and AS 4806</li>
+          <li>Reproducible formula — same inputs, same result</li>
+          <li>Exportable as an audit-ready report</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 3 steps -->
+    <div class="risk-steps reveal">
+      <div class="risk-step glass">
+        <div class="rs-head"><span class="rs-num">01</span><span class="rs-tag" style="color:var(--blue-light);">Survey</span></div>
+        <h3>Site Risk Survey</h3>
+        <p>Structured walkthrough of access points, critical areas, existing controls and operational exposure. Findings are recorded as discrete risk factors.</p>
+      </div>
+      <div class="risk-step glass">
+        <div class="rs-head"><span class="rs-num">02</span><span class="rs-tag" style="color:var(--accent);">Score</span></div>
+        <h3>Baseline Risk Score</h3>
+        <p>Each factor scored on Probability × Consequence (ISO 31000 / AS 4806). Output is a reproducible number — Low, Moderate, High or Critical.</p>
+      </div>
+      <div class="risk-step glass">
+        <div class="rs-head"><span class="rs-num">03</span><span class="rs-tag" style="color:var(--green);">Verify</span></div>
+        <h3>Live AI Verification</h3>
+        <p>Detections are hashed (SHA-256) and matched back to the baseline, so the score moves with real evidence — not opinion.</p>
+      </div>
+    </div>
+
+    <!-- Chart + readout -->
+    <div class="risk-chart-row reveal">
+      <div class="risk-chart glass">
+        <div class="rc-head">
+          <div><div class="rc-title">Risk Score — 6 Month Cycle</div><div class="rc-sub">Survey baseline → detection trend → post-remediation</div></div>
+          <div class="rc-current"><span>Current</span><strong>38</strong></div>
+        </div>
+        <svg viewBox="0 0 720 260" preserveAspectRatio="none" class="rc-svg">
+          <defs>
+            <linearGradient id="rcFill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#60A5FA" stop-opacity=".35"/>
+              <stop offset="1" stop-color="#60A5FA" stop-opacity="0"/>
+            </linearGradient>
+            <linearGradient id="rcLine" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#60A5FA"/><stop offset=".55" stop-color="#FBBF24"/><stop offset="1" stop-color="#34D399"/>
+            </linearGradient>
+          </defs>
+          <g stroke="rgba(255,255,255,.07)" stroke-width="1">
+            <line x1="0" y1="40" x2="720" y2="40"/><line x1="0" y1="100" x2="720" y2="100"/>
+            <line x1="0" y1="160" x2="720" y2="160"/><line x1="0" y1="220" x2="720" y2="220"/>
+          </g>
+          <path d="M40 150 L170 138 L300 96 L430 64 L560 132 L680 176 L680 240 L40 240 Z" fill="url(#rcFill)"/>
+          <path d="M40 150 L170 138 L300 96 L430 64 L560 132 L680 176" fill="none" stroke="url(#rcLine)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          <g>
+            <circle cx="40" cy="150" r="6" fill="#60A5FA"/><circle cx="300" cy="96" r="6" fill="#FBBF24"/>
+            <circle cx="430" cy="64" r="7" fill="#FBBF24"/><circle cx="680" cy="176" r="7" fill="#34D399"/>
+          </g>
+          <line x1="430" y1="64" x2="430" y2="240" stroke="#FBBF24" stroke-opacity=".35" stroke-width="2" stroke-dasharray="6 6"/>
+        </svg>
+        <div class="rc-legend">
+          <span><i style="background:#60A5FA"></i>Baseline 45</span>
+          <span><i style="background:#FBBF24"></i>Peak 68 — remediation triggered</span>
+          <span><i style="background:#34D399"></i>Verified 38</span>
+        </div>
+      </div>
+
+      <div class="risk-readout glass">
+        <div class="rr-item"><div class="rr-label">Baseline established</div><div class="rr-val" style="color:var(--blue-light);">Moderate · 45</div></div>
+        <div class="rr-item"><div class="rr-label">Peak after detections</div><div class="rr-val" style="color:var(--amber);">High · 68</div></div>
+        <div class="rr-item"><div class="rr-label">After corrective action</div><div class="rr-val" style="color:var(--green);">Moderate · 38</div></div>
+        <div class="rr-item"><div class="rr-label">Net risk reduction</div><div class="rr-val" style="color:var(--green);">−44%</div></div>
+        <p class="rr-note">Every point on this curve is backed by hashed evidence — defensible in an audit, an insurance claim or a court.</p>
+      </div>
+    </div>
+
+    <!-- Benefits, condensed -->
+    <div class="risk-benefits reveal">
+      <div class="rb-item"><h4>Spend where it matters</h4><p>Scores rank threats, so budget follows consequence — not the loudest complaint.</p></div>
+      <div class="rb-item"><h4>Audit-ready by default</h4><p>ISO 31000 / AS 4806 formulas and hashed evidence, exportable as a report.</p></div>
+      <div class="rb-item"><h4>Prove the improvement</h4><p>Before/after scores turn security spend into a measurable outcome.</p></div>
+      <div class="rb-item"><h4>Prevent, don't react</h4><p>Trends surface repeat exposure before it becomes an incident.</p></div>
+    </div>
+
+    <div class="risk-cta reveal">
+      <a href="#contact" class="btn btn-primary">Request a Risk Survey <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
   </div>
 </section>
+
+<div class="wrap"><div class="section-sep"></div></div>
 
 <!-- ===== PROJECTS — SEM IMAGENS ===== -->
 <section id="projects">
