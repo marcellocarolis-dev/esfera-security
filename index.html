@@ -932,12 +932,13 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);padding:40px
           <div class="contact-detail"><div class="cd-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div class="cd-text"><strong>Email</strong>contact@esferasecurity.com.au</div></div>
         </div>
         <form class="contact-form" id="contactForm">
-          <div class="form-row"><div class="form-group"><label>First Name</label><input type="text" placeholder="John" required></div><div class="form-group"><label>Last Name</label><input type="text" placeholder="Smith" required></div></div>
-          <div class="form-group"><label>Email</label><input type="email" placeholder="john@company.com.au" required></div>
-          <div class="form-group"><label>Organisation</label><input type="text" placeholder="Company or property name"></div>
-          <div class="form-group"><label>Interest</label><select required><option value="" disabled selected>Select a solution</option><option>AI Video Surveillance</option><option>Facial Recognition & Access</option><option>Smart Community</option><option>Commercial & Industrial</option><option>Integrated Ecosystem</option><option>General Enquiry</option></select></div>
-          <div class="form-group"><label>Message</label><textarea placeholder="Tell us about your requirements..."></textarea></div>
+          <div class="form-row"><div class="form-group"><label>First Name</label><input type="text" name="first_name" placeholder="John" required></div><div class="form-group"><label>Last Name</label><input type="text" name="last_name" placeholder="Smith" required></div></div>
+          <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="john@company.com.au" required></div>
+          <div class="form-group"><label>Organisation</label><input type="text" name="organisation" placeholder="Company or property name"></div>
+          <div class="form-group"><label>Interest</label><select name="interest" required><option value="" disabled selected>Select a solution</option><option>AI Video Surveillance</option><option>Facial Recognition & Access</option><option>Smart Community</option><option>Commercial & Industrial</option><option>Integrated Ecosystem</option><option>General Enquiry</option></select></div>
+          <div class="form-group"><label>Message</label><textarea name="message" placeholder="Tell us about your requirements..."></textarea></div>
           <div class="form-submit"><button type="submit" class="btn btn-primary">Send Enquiry <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></div>
+          <div class="form-error" id="formError" style="display:none;margin-top:10px;font-size:12px;color:#F87171;"></div>
           <div class="form-toast" id="formToast">✓ Thank you! Your enquiry has been sent.</div>
         </form>
       </div>
@@ -968,7 +969,32 @@ document.querySelectorAll('.chart-card').forEach(c=>{if(c.querySelector('.perf-b
 const dbars=document.querySelectorAll('.bars .bar');
 const bObs=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting){dbars.forEach(b=>{const h=b.style.height;b.style.height='0%';setTimeout(()=>{b.style.height=h;},200);});bObs.unobserve(en.target);}});},{threshold:.3});
 const dc=document.querySelector('.dash-chart');if(dc)bObs.observe(dc);
-document.getElementById('contactForm').addEventListener('submit',function(e){e.preventDefault();const t=document.getElementById('formToast'),b=this.querySelector('button[type="submit"]');b.innerHTML='<span style="display:inline-flex;align-items:center;gap:8px;">Sending... <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="animation:spin 1s linear infinite;"><path d="M12 2a10 10 0 0110 10"/></svg></span>';b.style.pointerEvents='none';setTimeout(()=>{t.classList.add('show');b.innerHTML='Sent ✓';b.style.background='linear-gradient(135deg,#059669,#047857)';this.reset();setTimeout(()=>{b.innerHTML='Send Enquiry <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" width="14" height="14"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';b.style.background='';b.style.pointerEvents='';t.classList.remove('show');},4000);},1500);});
+const LEAD_INTAKE_URL='https://zzxvnlrbzfwrhwmgeerl.supabase.co/functions/v1/public-lead-intake';
+const LEAD_INTAKE_KEY='sb_publishable_hcskYmCM2-mSOm6mxieVaQ_Ap97oWQL';
+document.getElementById('contactForm').addEventListener('submit',async function(e){
+  e.preventDefault();
+  const t=document.getElementById('formToast'),errEl=document.getElementById('formError'),b=this.querySelector('button[type="submit"]');
+  errEl.style.display='none';
+  const fd=new FormData(this);
+  const payload={first_name:fd.get('first_name'),last_name:fd.get('last_name'),email:fd.get('email'),organisation:fd.get('organisation'),interest:fd.get('interest'),message:fd.get('message')};
+  b.innerHTML='<span style="display:inline-flex;align-items:center;gap:8px;">Sending... <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="animation:spin 1s linear infinite;"><path d="M12 2a10 10 0 0110 10"/></svg></span>';
+  b.style.pointerEvents='none';
+  try{
+    const res=await fetch(LEAD_INTAKE_URL,{method:'POST',headers:{'Content-Type':'application/json','apikey':LEAD_INTAKE_KEY,'Authorization':'Bearer '+LEAD_INTAKE_KEY},body:JSON.stringify(payload)});
+    const json=await res.json().catch(()=>({}));
+    if(!res.ok||json.status==='error')throw new Error(json.message||'Failed to send.');
+    t.classList.add('show');
+    b.innerHTML='Sent ✓';
+    b.style.background='linear-gradient(135deg,#059669,#047857)';
+    this.reset();
+    setTimeout(()=>{b.innerHTML='Send Enquiry <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" width="14" height="14"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';b.style.background='';b.style.pointerEvents='';t.classList.remove('show');},4000);
+  }catch(err){
+    errEl.textContent='Something went wrong — please try again or email contact@esferasecurity.com.au directly.';
+    errEl.style.display='block';
+    b.innerHTML='Send Enquiry <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" width="14" height="14"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+    b.style.pointerEvents='';
+  }
+});
 </script>
 </body>
 </html>
