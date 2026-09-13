@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Esfera Security Australia — Intelligent Security Solutions</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -47,6 +48,8 @@ header.scrolled{background:var(--header-bg);backdrop-filter:blur(20px);-webkit-b
 nav{display:flex;align-items:center;justify-content:space-between;padding:20px 40px;max-width:1200px;margin:0 auto;}
 @media(max-width:768px){nav{padding:16px 24px;}}
 .logo{display:flex;align-items:center;gap:12px;z-index:1001;}
+.logo-img{height:46px;width:auto;display:block;}
+@media(max-width:768px){.logo-img{height:38px;}}
 .logo-icon{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--blue),var(--accent));display:flex;align-items:center;justify-content:center;overflow:hidden;}
 .logo-icon::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 40%,rgba(255,255,255,.15));}
 .logo-icon svg{width:22px;height:22px;position:relative;z-index:1;}
@@ -410,6 +413,44 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);padding:40px
 @media(max-width:900px){.risk-steps{grid-template-columns:1fr;}.risk-chart-row{grid-template-columns:1fr;}.risk-benefits{grid-template-columns:1fr 1fr;}}
 @media(max-width:560px){.risk-benefits{grid-template-columns:1fr;}}
 
+/* PROOF / AUDITABLE SURVEILLANCE */
+.cmp-table{width:100%;border-collapse:separate;border-spacing:0;background:var(--bg-card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;font-size:13px;}
+.cmp-table th{font-family:'Poppins';font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);text-align:left;padding:14px 18px;background:rgba(255,255,255,.03);border-bottom:1px solid var(--line);}
+.cmp-table th.us{color:var(--blue-light);}
+.cmp-table td{padding:16px 18px;vertical-align:top;border-bottom:1px solid var(--line);color:var(--text-secondary);line-height:1.6;}
+.cmp-table tr:last-child td{border-bottom:none;}
+.cmp-table td.claim{color:var(--text);font-weight:600;font-family:'Poppins';font-size:13.5px;}
+.cmp-table td.market{color:var(--text-muted);}
+.cmp-table td.us{background:rgba(59,130,246,.05);color:var(--text);}
+.cmp-table td.us b{color:var(--blue-light);}
+@media(max-width:800px){.cmp-table,.cmp-table thead,.cmp-table tbody,.cmp-table tr,.cmp-table td,.cmp-table th{display:block;}.cmp-table thead{display:none;}.cmp-table td{border-bottom:none;padding:10px 18px;}.cmp-table td.claim{padding-top:18px;}.cmp-table td.us{padding-bottom:18px;border-bottom:1px solid var(--line);}.cmp-table td::before{content:attr(data-h);display:block;font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-bottom:3px;}.cmp-table td.claim::before{display:none;}}
+.chain-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:32px;}
+.chain-grid .step-card{padding:22px;}
+.chain-grid .step-card h4{font-size:14px;}
+.chain-grid .step-card p{font-size:11.5px;}
+.chain-grid .step-card .w{display:block;margin-top:10px;font-size:10px;color:var(--blue-light);letter-spacing:.04em;font-family:'JetBrains Mono','Inter',monospace;}
+@media(max-width:1000px){.chain-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:640px){.chain-grid{grid-template-columns:1fr;}}
+.ops-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px;}
+.ops-card{padding:24px;border-radius:var(--radius);background:var(--bg-card);border:1px solid var(--line);transition:var(--transition);}
+.ops-card:hover{border-color:rgba(59,130,246,.3);background:var(--bg-card-hover);}
+.ops-card .when{font-size:10px;color:var(--blue);text-transform:uppercase;letter-spacing:.12em;font-weight:600;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+.ops-card .when svg{width:14px;height:14px;}
+.ops-card h4{font-size:14.5px;margin-bottom:8px;line-height:1.35;}
+.ops-card p{font-size:12px;color:var(--text-secondary);line-height:1.65;}
+.ops-card .rec{margin-top:12px;padding-top:10px;border-top:1px solid var(--line);font-size:11px;color:var(--text-muted);line-height:1.6;}
+.ops-card .rec b{color:var(--green);font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:9px;display:block;margin-bottom:3px;}
+@media(max-width:900px){.ops-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.ops-grid{grid-template-columns:1fr;}}
+.honest{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px;}
+.honest .mv-card.yes{border-color:rgba(52,211,153,.25);background:rgba(52,211,153,.04);}
+.honest .mv-card.yes .mv-label{color:var(--green);}
+.honest .mv-card.no{border-color:rgba(251,191,36,.25);background:rgba(251,191,36,.04);}
+.honest .mv-card.no .mv-label{color:var(--amber);}
+.honest .mv-card p+p{margin-top:8px;}
+@media(max-width:700px){.honest{grid-template-columns:1fr;}}
+.principle{margin-top:40px;text-align:center;font-family:'Poppins';font-weight:600;font-size:clamp(18px,2.4vw,24px);line-height:1.4;}
+.principle span{background:linear-gradient(135deg,var(--blue-light),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .section-sep{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);max-width:200px;margin:0 auto;}
 </style>
 <!-- Secondary imagery refreshed for stronger security/AI/enterprise relevance. Hero imagery intentionally preserved. -->
@@ -428,12 +469,11 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);padding:40px
 <header id="header">
   <nav>
     <a href="#home" class="logo">
-      <div class="logo-icon"><svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round"><path d="M20 75Q50 20 82 40"/><path d="M18 58Q48 30 72 44" opacity="0.7"/><path d="M16 42Q44 28 58 38" opacity="0.45"/></svg></div>
-      <div class="logo-text"><span class="logo-name">esfera</span><span class="logo-sub">SECURITY AUSTRALIA</span></div>
+      <img class="logo-img" src="assets/esfera-logo.png" alt="Esfera Security Australia — Advanced Security & Monitoring Solutions">
     </a>
     <div class="nav-links">
       <a href="#about">About</a><a href="#solutions">Solutions</a><a href="#ecosystem">Ecosystem</a>
-      <a href="#urbanvision">UrbanVision AI</a><a href="#risk">Risk Survey</a>
+      <a href="#urbanvision">UrbanVision AI</a><a href="#proof">Proof</a><a href="#risk">Risk Survey</a>
       <a href="#projects">Projects</a><a href="#partners">Partners</a><a href="#contact" class="nav-cta">Request Consultation</a>
     </div>
     <div class="burger" id="burger"><span></span><span></span><span></span></div>
@@ -442,7 +482,7 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);padding:40px
 
 <div class="mobile-menu" id="mobileMenu">
   <a href="#about">About</a><a href="#solutions">Solutions</a><a href="#ecosystem">Ecosystem</a>
-  <a href="#urbanvision">UrbanVision AI</a><a href="#risk">Risk Survey</a>
+  <a href="#urbanvision">UrbanVision AI</a><a href="#proof">Proof</a><a href="#risk">Risk Survey</a>
   <a href="#projects">Projects</a><a href="#partners">Partners</a><a href="#contact" class="mobile-cta">Request Consultation</a>
 </div>
 
@@ -625,6 +665,8 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);padding:40px
           <li>Zero-Trust encrypted connection</li>
           <li>Real-time AI Detections (PPE, Fire, Loitering, Intrusion, Abandoned Object, LPR, Fighting, Crowd)</li>
           <li>Intelligent Wall View (Reduces operator fatigue)</li>
+          <li>Alerts with SLA escalation, health as alarm, operator phone app</li>
+          <li>Event clips, camera view log, MFA and per-site retention</li>
         </ul>
       </div>
     </div>
@@ -667,6 +709,96 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);padding:40px
 <!-- ========================================== -->
 <!-- FIM DO MÓDULO URBANVISION AI                -->
 <!-- ========================================== -->
+
+<!-- ========================================== -->
+<!-- AUDITABLE SURVEILLANCE — THE PROOF CHAIN   -->
+<!-- ========================================== -->
+<section id="proof">
+  <div class="wrap">
+    <div class="section-header center reveal">
+      <div class="subhead" style="justify-content:center;">Auditable Surveillance</div>
+      <h2>Everyone Sells Footage. We Deliver Proof.</h2>
+      <p>Footage is a file anyone with disk access can cut, recompress or replace. Proof is a record a third party — your insurer, your strata committee, your solicitor — can verify on their own, without trusting us and without logging into our system.</p>
+    </div>
+
+    <div class="reveal" style="overflow-x:auto;">
+      <table class="cmp-table">
+        <thead><tr><th>The claim every camera makes</th><th>How the market answers today</th><th class="us">How UrbanVision answers</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="claim">"This camera covers what it needs to cover"</td>
+            <td class="market" data-h="Market">A manufacturer spec sheet: "4K", "30 m IR". No relation to the point where it was installed, nor to the applicable standard.</td>
+            <td class="us" data-h="UrbanVision">Each position calculated in <b>pixels per metre</b> at the real target distance, against the DORI level the site requires (AS 4806.2). Exported as a signed report.</td>
+          </tr>
+          <tr>
+            <td class="claim">"The system is working"</td>
+            <td class="market" data-h="Market">A green LED on the panel — usually derived from "the recorder answered", not from "this camera delivered an image".</td>
+            <td class="us" data-h="UrbanVision">At handover the on-site unit <b>opens every stream and reads a frame</b>. Afterwards, an edge without heartbeat or a camera without frames becomes a critical event by itself — and resolves itself when it recovers.</td>
+          </tr>
+          <tr>
+            <td class="claim">"Somebody was told"</td>
+            <td class="market" data-h="Market">An alert popped up on a screen. Whether anyone saw it is a matter of memory.</td>
+            <td class="us" data-h="UrbanVision">E-mail and phone push to level 1 the moment the event is raised; if nobody claims it within the SLA, <b>escalation</b> to level 2, then 3. Every notice, every claim, every minute is recorded.</td>
+          </tr>
+          <tr>
+            <td class="claim">"This event happened like this"</td>
+            <td class="market" data-h="Market">An exported video file. Anyone can edit it and nobody can prove otherwise.</td>
+            <td class="us" data-h="UrbanVision">The fingerprint of the image is computed <b>on the local unit before upload</b>; the server signs the record. The PDF carries a public verification link — no login needed.</td>
+          </tr>
+          <tr>
+            <td class="claim">"Who watched the cameras that night?"</td>
+            <td class="market" data-h="Market">Nobody knows. Privacy Act and GDPR questions are answered from memory.</td>
+            <td class="us" data-h="UrbanVision">Every camera view and every download: <b>who, when, from where, for how long</b>. Two-step sign-in enforceable company-wide. Retention per site, with the record preserved after the image is purged.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section-header reveal" style="margin-top:72px;margin-bottom:0;">
+      <div class="subhead">The Chain of Proof</div>
+      <h2 style="font-size:clamp(22px,3vw,30px);">Five links. Each one leaves a document that can be checked — not a screen that has to be believed.</h2>
+    </div>
+    <div class="chain-grid">
+      <div class="step-card reveal"><div class="num">01</div><div class="step-label">Risk</div><h4>Surveyed with the client</h4><p>Zone by zone, with photos, into a structured risk analysis. The system derives which detections the site needs — not a menu ticked by intuition.</p><span class="w">ISO 31000 · AS ISO 31000</span></div>
+      <div class="step-card reveal rd1"><div class="num">02</div><div class="step-label">Design</div><h4>With the maths on the page</h4><p>Pixels per metre at the real target distance, against the standard's minimum. Model and lens recommended per position.</p><span class="w">DORI · AS 4806.2</span></div>
+      <div class="step-card reveal rd2"><div class="num">03</div><div class="step-label">Installation</div><h4>Proven, not assumed</h4><p>The on-site unit opens every camera and reads a frame: time to first frame, measured resolution, reason on failure. No green until there is no red.</p><span class="w">per-camera verification</span></div>
+      <div class="step-card reveal rd3"><div class="num">04</div><div class="step-label">Operation</div><h4>Audited against the design</h4><p>Installed versus designed: camera out of position, planned point never built, real site coverage. Deviations are recorded with a reason.</p><span class="w">level 1 · level 2 conformity</span></div>
+      <div class="step-card reveal rd4"><div class="num">05</div><div class="step-label">Event</div><h4>Tamper-evident</h4><p>Fingerprint at the source, signature on the server, public verification link in the PDF. Verifiable by anyone, forever.</p><span class="w">SHA-256 · public verify route</span></div>
+    </div>
+
+    <div class="img-text reveal" style="margin-top:72px;">
+      <div class="img-side"><img loading="lazy" decoding="async" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201200%20800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%23070B2B%22%2F%3E%3Cstop%20offset%3D%220.55%22%20stop-color%3D%22%230B1642%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23071A32%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22blue%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%2360A5FA%22%2F%3E%3Cstop%20offset%3D%22.5%22%20stop-color%3D%22%2306B6D4%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%231D4ED8%22%2F%3E%3C%2FlinearGradient%3E%3CradialGradient%20id%3D%22glow%22%3E%3Cstop%20stop-color%3D%22%2322D3EE%22%20stop-opacity%3D%22.45%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%2322D3EE%22%20stop-opacity%3D%220%22%2F%3E%3C%2FradialGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23bg%29%22%2F%3E%3Cellipse%20cx%3D%22820%22%20cy%3D%22300%22%20rx%3D%22380%22%20ry%3D%22300%22%20fill%3D%22url%28%23glow%29%22%20opacity%3D%22.3%22%2F%3E%3Cg%20stroke%3D%22%2360A5FA%22%20stroke-opacity%3D%22.12%22%20stroke-width%3D%221%22%3E%3Cpath%20d%3D%22M0%20160H1200M0%20320H1200M0%20480H1200M0%20640H1200M200%200V800M400%200V800M600%200V800M800%200V800M1000%200V800%22%2F%3E%3C%2Fg%3E%3Crect%20x%3D%22430%22%20y%3D%2290%22%20width%3D%22340%22%20height%3D%22640%22%20rx%3D%2244%22%20fill%3D%22%230B1228%22%20stroke%3D%22%2394A3B8%22%20stroke-opacity%3D%22.5%22%20stroke-width%3D%226%22%2F%3E%3Crect%20x%3D%22452%22%20y%3D%22112%22%20width%3D%22296%22%20height%3D%22596%22%20rx%3D%2230%22%20fill%3D%22%230F172A%22%2F%3E%3Crect%20x%3D%22540%22%20y%3D%22122%22%20width%3D%22120%22%20height%3D%228%22%20rx%3D%224%22%20fill%3D%22%231E293B%22%2F%3E%3Crect%20x%3D%22476%22%20y%3D%22160%22%20width%3D%22248%22%20height%3D%2214%22%20rx%3D%224%22%20fill%3D%22%23334155%22%2F%3E%3Crect%20x%3D%22476%22%20y%3D%22196%22%20width%3D%22248%22%20height%3D%22118%22%20rx%3D%2214%22%20fill%3D%22%231E1B3A%22%20stroke%3D%22%23F87171%22%20stroke-opacity%3D%22.7%22%20stroke-width%3D%222%22%2F%3E%3Crect%20x%3D%22492%22%20y%3D%22212%22%20width%3D%228%22%20height%3D%2286%22%20rx%3D%224%22%20fill%3D%22%23F87171%22%2F%3E%3Crect%20x%3D%22512%22%20y%3D%22214%22%20width%3D%2270%22%20height%3D%2210%22%20rx%3D%223%22%20fill%3D%22%23F87171%22%2F%3E%3Crect%20x%3D%22512%22%20y%3D%22236%22%20width%3D%22170%22%20height%3D%2214%22%20rx%3D%224%22%20fill%3D%22%23E2E8F0%22%2F%3E%3Crect%20x%3D%22512%22%20y%3D%22262%22%20width%3D%22130%22%20height%3D%2210%22%20rx%3D%223%22%20fill%3D%22%2364748B%22%2F%3E%3Crect%20x%3D%22512%22%20y%3D%22284%22%20width%3D%2290%22%20height%3D%2210%22%20rx%3D%223%22%20fill%3D%22%2364748B%22%2F%3E%3Crect%20x%3D%22476%22%20y%3D%22330%22%20width%3D%22120%22%20height%3D%2286%22%20rx%3D%2212%22%20fill%3D%22%23111C3D%22%20stroke%3D%22%2322D3EE%22%20stroke-opacity%3D%22.3%22%2F%3E%3Ccircle%20cx%3D%22560%22%20cy%3D%22373%22%20r%3D%2224%22%20fill%3D%22none%22%20stroke%3D%22%231E293B%22%20stroke-width%3D%227%22%2F%3E%3Cpath%20d%3D%22M560%20349a24%2024%200%200%201%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%2334D399%22%20stroke-width%3D%227%22%20stroke-linecap%3D%22round%22%2F%3E%3Crect%20x%3D%22604%22%20y%3D%22330%22%20width%3D%22120%22%20height%3D%2286%22%20rx%3D%2212%22%20fill%3D%22%23111C3D%22%20stroke%3D%22%2322D3EE%22%20stroke-opacity%3D%22.3%22%2F%3E%3Cg%20fill%3D%22url%28%23blue%29%22%3E%3Crect%20x%3D%22622%22%20y%3D%22392%22%20width%3D%2210%22%20height%3D%2210%22%20rx%3D%222%22%2F%3E%3Crect%20x%3D%22638%22%20y%3D%22380%22%20width%3D%2210%22%20height%3D%2222%22%20rx%3D%222%22%2F%3E%3Crect%20x%3D%22654%22%20y%3D%22386%22%20width%3D%2210%22%20height%3D%2216%22%20rx%3D%222%22%2F%3E%3Crect%20x%3D%22670%22%20y%3D%22366%22%20width%3D%2210%22%20height%3D%2236%22%20rx%3D%222%22%2F%3E%3Crect%20x%3D%22686%22%20y%3D%22374%22%20width%3D%2210%22%20height%3D%2228%22%20rx%3D%222%22%2F%3E%3Crect%20x%3D%22702%22%20y%3D%22352%22%20width%3D%2210%22%20height%3D%2250%22%20rx%3D%222%22%2F%3E%3C%2Fg%3E%3Crect%20x%3D%22476%22%20y%3D%22432%22%20width%3D%22248%22%20height%3D%2260%22%20rx%3D%2212%22%20fill%3D%22%23111C3D%22%20stroke%3D%22%2322D3EE%22%20stroke-opacity%3D%22.25%22%2F%3E%3Ccircle%20cx%3D%22504%22%20cy%3D%22462%22%20r%3D%229%22%20fill%3D%22%2334D399%22%2F%3E%3Crect%20x%3D%22524%22%20y%3D%22454%22%20width%3D%22150%22%20height%3D%228%22%20rx%3D%223%22%20fill%3D%22%2394A3B8%22%2F%3E%3Crect%20x%3D%22524%22%20y%3D%22468%22%20width%3D%22100%22%20height%3D%228%22%20rx%3D%223%22%20fill%3D%22%23475569%22%2F%3E%3Crect%20x%3D%22476%22%20y%3D%22612%22%20width%3D%22248%22%20height%3D%2252%22%20rx%3D%2214%22%20fill%3D%22url%28%23blue%29%22%2F%3E%3Crect%20x%3D%22556%22%20y%3D%22632%22%20width%3D%2288%22%20height%3D%2212%22%20rx%3D%224%22%20fill%3D%22%23F8FAFC%22%2F%3E%3Cg%20transform%3D%22translate%28860%20150%29%22%3E%3Ccircle%20cx%3D%220%22%20cy%3D%220%22%20r%3D%2296%22%20fill%3D%22%230B1228%22%20stroke%3D%22url%28%23blue%29%22%20stroke-width%3D%226%22%2F%3E%3Cpath%20d%3D%22M0-58%2042-40v40c0%2036-42%2060-42%2060S-42%2036-42%200v-40z%22%20fill%3D%22none%22%20stroke%3D%22%2334D399%22%20stroke-width%3D%227%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M-22%202%20-6%2018%2026-16%22%20fill%3D%22none%22%20stroke%3D%22%2334D399%22%20stroke-width%3D%229%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fg%3E%3Cg%20font-family%3D%22monospace%22%20font-size%3D%2220%22%20fill%3D%22%2367E8F9%22%20opacity%3D%22.7%22%3E%3Ctext%20x%3D%22790%22%20y%3D%22300%22%3Esha256%3A%209f3a%E2%80%A6c41e%3C%2Ftext%3E%3Ctext%20x%3D%22790%22%20y%3D%22332%22%3Esigned%20%C2%B7%20verified%3C%2Ftext%3E%3C%2Fg%3E%3Cg%20fill%3D%22%2367E8F9%22%3E%3Ccircle%20cx%3D%22230%22%20cy%3D%22220%22%20r%3D%224%22%2F%3E%3Ccircle%20cx%3D%22300%22%20cy%3D%22560%22%20r%3D%224%22%2F%3E%3Ccircle%20cx%3D%221010%22%20cy%3D%22500%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%221090%22%20cy%3D%22640%22%20r%3D%224%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M120%20660%20C300%20560%20520%20640%20760%20500%22%20fill%3D%22none%22%20stroke%3D%22%2322D3EE%22%20stroke-opacity%3D%22.2%22%20stroke-width%3D%222%22%2F%3E%3C%2Fsvg%3E" alt="Operator phone app with a critical event, SLA ring and verified seal"><div class="img-badge">Operator App · Verified Event</div></div>
+      <div class="text-side">
+        <div class="subhead">After the Event</div>
+        <h3>Proof Without a Response Is an Archive</h3>
+        <p>UrbanVision also <strong>acts</strong> when something happens — and records that it did. The operator gets the event on the phone with the clip, where and for how long, and what the thumb can reach: claim, call the site's emergency number, escalate, resolve through the procedure. The manager gets the measured weekly summary in the inbox. The strata manager gets the site summary and the verified seal in the pocket — and cannot operate, by design.</p>
+        <ul class="checklist">
+          <li>Alerts with 3-level escalation on SLA</li><li>Edge and camera health as automatic alarms</li>
+          <li>Installable phone app (Android &amp; iPhone)</li><li>Event clips with timeline and download</li>
+          <li>Two-step verification (authenticator app)</li><li>Camera view log · retention per site</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ops-grid">
+      <div class="ops-card reveal"><div class="when"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9M13.7 21a2 2 0 0 1-3.4 0"/></svg>A critical event is raised</div><h4>Notify now, escalate if ignored</h4><p>Level 1 by e-mail and push. Unclaimed after the SLA: level 2. After twice the SLA: level 3.</p><div class="rec"><b>What gets recorded</b>To whom, in which wave, sent or failed. Claimed in how long. SLA met or breached.</div></div>
+      <div class="ops-card reveal rd1"><div class="when"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>The on-site unit stops responding</div><h4>Health becomes an alarm</h4><p>Edge without heartbeat opens a critical event by itself. A camera that returns no frame opens a high one.</p><div class="rec"><b>What gets recorded</b>Auto-resolved with the time it came back. Nobody closes alarms for things that recovered.</div></div>
+      <div class="ops-card reveal rd2"><div class="when"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>The operator is on the street</div><h4>Claim, call, resolve — by thumb</h4><p>The push opens the event on the phone: clip, site, elapsed time, emergency number of the site's country, the procedure item by item.</p><div class="rec"><b>What gets recorded</b>Who claimed, when, from phone or console. Procedure ticked step by step.</div></div>
+      <div class="ops-card reveal rd3"><div class="when"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>Someone asks "where is the recording?"</div><h4>Timeline per camera and day</h4><p>A ~17-second clip around every confirmed detection. Player, certificate verification, download.</p><div class="rec"><b>What gets recorded</b>Every download and every camera view: who, when, for how long.</div></div>
+      <div class="ops-card reveal rd4"><div class="when"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>The site's retention period passes</div><h4>The image goes, the record stays</h4><p>Frame and clip are deleted after the configured days. The event keeps its data and says the media was removed by retention.</p><div class="rec"><b>What gets recorded</b>The certificate keeps the fingerprint — integrity stays verifiable without the image.</div></div>
+      <div class="ops-card reveal rd5"><div class="when"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/></svg>Monday, 7 am</div><h4>The measured weekly summary</h4><p>Events by priority, claimed within SLA, mean response time, system health, maintenance — in the manager's inbox.</p><div class="rec"><b>What gets recorded</b>Only what was measured. The e-mail states the period and separates "then" from "now".</div></div>
+    </div>
+
+    <div class="honest">
+      <div class="mv-card yes reveal"><div class="mv-label">What this is</div><p><strong>Auditable surveillance.</strong> A record of what each camera sees, that it was working, that someone was told, and that the event was not altered — verifiable by a third party.</p><p>Built on a data model that records provenance from the first survey. Not a feature that can be copied in a sprint.</p></div>
+      <div class="mv-card no reveal rd1"><div class="mv-label">What it is not, yet</div><p><strong>Not 24-hour continuous recording.</strong> It is a clip per event. Continuous recording comes by indexing the site's recorder (NVR), where there is one.</p><p>The screen says so. It does not draw a full bar pretending to have recorded what it did not.</p></div>
+    </div>
+
+    <p class="principle reveal">Never show green that was not measured. <span>It is our engineering rule — and our commercial position.</span></p>
+  </div>
+</section>
+
+<div class="wrap"><div class="section-sep"></div></div>
 
 <!-- COMMERCIAL -->
 <section id="commercial">
@@ -946,7 +1078,7 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);padding:40px
   </div>
 </section>
 
-<footer><div class="wrap"><div class="footer-inner"><div class="footer-left"><div class="f-icon"></div><span>© 2025 Esfera Security Australia. All rights reserved.</span></div><div class="footer-right"><span>Gold Coast, QLD, Australia</span></div></div></div></footer>
+<footer><div class="wrap"><div class="footer-inner"><div class="footer-left"><img src="assets/esfera-mark.png" alt="" style="height:30px;width:auto;opacity:.9;"><span>© 2026 Esfera Security Australia. All rights reserved.</span></div><div class="footer-right"><span>Gold Coast, QLD, Australia</span></div></div></div></footer>
 
 <a href="https://wa.me/61XXXXXXXXX" target="_blank" class="float-btn whatsapp-btn" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.81L2 22l5.42-1.35a9.86 9.86 0 004.62 1.16h.01c5.46 0 9.9-4.45 9.9-9.9C21.95 6.45 17.5 2 12.04 2zm5.83 14.07c-.25.7-1.4 1.34-1.94 1.4-.5.06-1.02.09-3.28-.7-2.77-1.02-4.55-3.83-4.7-4.01-.14-.18-1.12-1.49-1.12-2.84 0-1.35.71-2 .96-2.28.25-.28.55-.35.73-.35.18 0 .37 0 .53.01.17.01.4-.06.62.48.25.6.85 2.08.92 2.23.07.15.12.32.02.5-.1.18-.15.29-.3.45-.15.16-.31.36-.44.48-.15.14-.3.29-.13.57.17.28.75 1.24 1.62 2.01 1.12 1 2.06 1.31 2.34 1.46.28.14.44.12.6-.07.17-.2.72-.84.91-1.13.19-.28.38-.23.63-.14.26.1 1.65.78 1.94.92.28.14.47.21.54.33.07.12.07.7-.18 1.4z"/></svg></a>
 <a href="#home" class="float-btn totop-btn" id="totopBtn" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></a>
