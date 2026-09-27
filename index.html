@@ -482,7 +482,7 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);padding:40px
 
 <div class="mobile-menu" id="mobileMenu">
   <a href="#about">About</a><a href="#solutions">Solutions</a><a href="#ecosystem">Ecosystem</a>
-  <a href="#urbanvision">UrbanVision AI</a><a href="#proof">Proof</a><a href="#risk">Risk Survey</a>
+  <a href="#urbanvision">UrbanVision AI</a><a href="#proof">Proof</a><a href="#scan">Scan</a><a href="#risk">Risk Survey</a>
   <a href="#projects">Projects</a><a href="#partners">Partners</a><a href="#contact" class="mobile-cta">Request Consultation</a>
 </div>
 
@@ -795,6 +795,103 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);padding:40px
     </div>
 
     <p class="principle reveal">Never show green that was not measured. <span>It is our engineering rule — and our commercial position.</span></p>
+  </div>
+</section>
+
+<div class="wrap"><div class="section-sep"></div></div>
+<!-- ========================================== -->
+<!-- URBANVISION SCAN & PTZ AUDIT                -->
+<!-- ========================================== -->
+<section id="scan">
+  <div class="wrap">
+    <div class="section-header center reveal">
+      <div class="subhead" style="justify-content:center;">UrbanVision Scan &amp; PTZ Audit</div>
+      <h2>Your Cameras Are Online. Are They Doing Their Job?</h2>
+      <p>A site visit that reads every camera on the network and turns what it found into a signed report — delivered by link and QR code, and verifiable by anyone. Then the on-site unit keeps measuring, every day, and says when something changes while the camera stays green.</p>
+    </div>
+
+    <div class="reveal" style="overflow-x:auto;">
+      <table class="cmp-table">
+        <thead><tr><th>The question</th><th>How the market answers today</th><th class="us">How UrbanVision Scan answers</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="claim">"The cameras are working"</td>
+            <td class="market" data-h="Market">A green dot in the VMS: the recorder answered.</td>
+            <td class="us" data-h="UrbanVision">Each camera read on its own: <b>image, recording on the recorder, retention against the contract, clock, firmware</b>. What could not be measured is written as not measured — never as fine.</td>
+          </tr>
+          <tr>
+            <td class="claim">"The time on the footage is right"</td>
+            <td class="market" data-h="Market">Nobody checks until the footage is needed.</td>
+            <td class="us" data-h="UrbanVision">Camera clock against UTC, and the camera's time zone against the <b>site's</b>. A camera that went back to its factory date after a power cut, or runs on a foreign time zone, is named — with the fix.</td>
+          </tr>
+          <tr>
+            <td class="claim">"It delivers what was specified"</td>
+            <td class="market" data-h="Market">The spec sheet says 4K at 25 fps.</td>
+            <td class="us" data-h="UrbanVision"><b>Configured versus delivered</b>: frame rate, resolution and codec counted on the real stream. And the installed camera against the design — brand, model, PTZ.</td>
+          </tr>
+          <tr>
+            <td class="claim">"Nothing has changed"</td>
+            <td class="market" data-h="Market">Nobody would know.</td>
+            <td class="us" data-h="UrbanVision">A daily fingerprint of every camera: firmware, time zone, network, identity. Changes go into a <b>ledger</b>; a different camera on the same record is flagged as a <b>possible replacement</b>; an ONVIF device nobody registered, as <b>unregistered</b>.</td>
+          </tr>
+          <tr>
+            <td class="claim">"The service was delivered"</td>
+            <td class="market" data-h="Market">An uptime figure with no method behind it.</td>
+            <td class="us" data-h="UrbanVision"><b>Service evidence</b> per site and period: availability, recording, retention, correct time, delivering as configured — each figure with the camera-days actually measured. No composite score.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section-header reveal" style="margin-top:72px;margin-bottom:0;">
+      <div class="subhead">From Visit to Proof</div>
+      <h2 style="font-size:clamp(22px,3vw,30px);">Five steps. The client ends up with a document they can check on their own phone.</h2>
+    </div>
+    <div class="chain-grid">
+      <div class="step-card reveal"><div class="num">01</div><div class="step-label">Book</div><h4>Scheduled and quoted</h4><p>Technician, address and site contact on record; the price comes from the published table, with the real cost and margin tracked after the visit.</p><span class="w">logistics · invoice · revenue</span></div>
+      <div class="step-card reveal rd1"><div class="num">02</div><div class="step-label">Sweep</div><h4>Read-only, on site</h4><p>The sweeper finds every camera and recorder and reads them. Passwords are never stored; any setting changed during the visit is listed in the report.</p><span class="w">ONVIF · manufacturer API · RTSP</span></div>
+      <div class="step-card reveal rd2"><div class="num">03</div><div class="step-label">Report</div><h4>Signed, in three levels</h4><p>Executive, technical and evidence, in English and Portuguese, with an action plan that follows each problem from visit to visit.</p><span class="w">signed · versioned · R-code</span></div>
+      <div class="step-card reveal rd3"><div class="num">04</div><div class="step-label">Deliver</div><h4>Link and QR code</h4><p>A temporary link shows the executive level only — no IP, MAC or firmware — and stops opening when it expires or is revoked.</p><span class="w">1 to 30 days · revocable</span></div>
+      <div class="step-card reveal rd4"><div class="num">05</div><div class="step-label">Verify</div><h4>The report checks itself</h4><p>Opened on a phone, the seal compares the document on screen with the one that was signed. The printed copy carries a permanent verification QR.</p><span class="w">SHA-256 · public verify route</span></div>
+    </div>
+
+    <div class="why-grid" style="margin-top:72px;">
+      <div class="why-card glass reveal">
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v3"/></svg>
+        </div>
+        <h3>Loud Sound — Heard, Never Recorded</h3>
+        <p>Cameras with a microphone become one more sensor: the camera's own alert, the sound level measured on site, and the type of sound — glass breaking, scream, gunshot, alarm. Audio is analysed on the local unit and discarded; only the result leaves the site.</p>
+      </div>
+      <div class="why-card glass reveal rd1">
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-5"/></svg>
+        </div>
+        <h3>Change Ledger &amp; Service Evidence</h3>
+        <p>The infrastructure's black box: what changed, when, from what to what. And, for contracts, the month in numbers — how many days each camera answered, recorded, kept the right time and delivered what it is configured to deliver.</p>
+      </div>
+      <div class="why-card glass reveal rd2">
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <h3>An Action Plan That Remembers</h3>
+        <p>Every problem keeps its ID between visits. It is only closed when the measurement that found it comes back clean — disappearing is not the same as being fixed — and a problem that returns is marked as recurring.</p>
+      </div>
+      <div class="why-card glass reveal rd3">
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+        </div>
+        <h3>On Your Phone, in Your Language</h3>
+        <p>Each device chooses what to receive — critical only, high and critical, or everything — and gets it in the language set in the app, with the same wording as the screen. The client's team and the service team are both told.</p>
+      </div>
+    </div>
+
+    <div class="honest">
+      <div class="mv-card yes reveal"><div class="mv-label">What this is</div><p><strong>An independent operational check.</strong> What is installed, whether it works, whether it keeps the right time, whether it delivers what it should — and what changed since the last look. Each finding with the measurement behind it.</p></div>
+      <div class="mv-card no reveal rd1"><div class="mv-label">What it is not, yet</div><p><strong>Not a design survey.</strong> Whether the cameras cover the right points, with the right pixel density, is the technical survey report. PTZ Audit publishing stays in pilot until its first run on real PTZ cameras.</p></div>
+    </div>
+
+    <p class="principle reveal">Not measured is never shown as healthy. <span>The same rule, from the first visit to the monthly evidence.</span></p>
   </div>
 </section>
 
